@@ -127,7 +127,7 @@
 							<img src="images/cupon-devider.png" alt="" />
 						</figure>
 						<div>
-							<p class="text-4xl font-bold font-rale mb-1">NEW15</p>
+							<p class="text-4xl font-bold font-rale mb-1">Couple 20</p>
 							<p class="text-xl pr-6 text-[#03071266] font-medium">
 								Coupon Code
 							</p>
@@ -178,7 +178,7 @@
 								>
 									<img src="images/seat-green.png" alt="" />
 									<p class="text-lg font-medium text-primary">
-										<span id="seats">40</span> Seats left
+										<span id="total-seats">40</span> Seats left
 									</p>
 								</figure>
 							</div>
@@ -247,49 +247,60 @@
 									</figcaption>
 								</figure>
 							</div>
-							<div
-								class="grid grid-cols-[auto_1fr_1fr_1fr_1fr] gap-y-6 gap-x-8 *:rounded-xl *:bg-tertiary *:text-center *:py-4 *:border *:cursor-pointer seat-container"
-							>
+							<div class="grid grid-cols-[auto_1fr] gap-y-6 gap-x-4">
 								<figure
-									class="!bg-[#0307121A] py-5 px-10 grid place-items-center rounded-xl col-span-5 justify-self-end"
+									class="!bg-[#0307121A] py-5 px-10 grid place-items-center rounded-xl col-span-2 justify-self-end"
 								>
 									<img src="images/Vector.png" alt="car vector" />
 								</figure>
-								<p>A</p>
-								<p>A1</p>
-								<p>A2</p>
-								<p>A3</p>
-								<p>A4</p>
-								<p>B</p>
-								<p>B1</p>
-								<p>B2</p>
-								<p>B3</p>
-								<p>B4</p>
-								<p>C</p>
-								<p>C1</p>
-								<p>C2</p>
-								<p>C3</p>
-								<p>C4</p>
-								<p>D</p>
-								<p>D1</p>
-								<p>D2</p>
-								<p>D3</p>
-								<p>D4</p>
-								<p>E</p>
-								<p>E1</p>
-								<p>E2</p>
-								<p>E3</p>
-								<p>E4</p>
-								<p>F</p>
-								<p>F1</p>
-								<p>F2</p>
-								<p>F3</p>
-								<p>F4</p>
-								<p>G</p>
-								<p>G1</p>
-								<p>G2</p>
-								<p>G3</p>
-								<p>G4</p>
+								<div class="grid gap-y-6 items-center *:font-medium">
+									<p>A</p>
+									<p>B</p>
+									<p>C</p>
+									<p>D</p>
+									<p>E</p>
+									<p>F</p>
+									<p>G</p>
+								</div>
+								<div
+									class="grid grid-cols-4 gap-y-6 gap-x-8 *:rounded-xl *:bg-tertiary *:text-center *:py-4 *:border *:cursor-pointer *:font-medium"
+									id="seats"
+								>
+									<p>A1</p>
+									<p>A2</p>
+									<p>A3</p>
+									<p>A4</p>
+
+									<p>B1</p>
+									<p>B2</p>
+									<p>B3</p>
+									<p>B4</p>
+
+									<p>C1</p>
+									<p>C2</p>
+									<p>C3</p>
+									<p>C4</p>
+
+									<p>D1</p>
+									<p>D2</p>
+									<p>D3</p>
+									<p>D4</p>
+
+									<p>E1</p>
+									<p>E2</p>
+									<p>E3</p>
+									<p>E4</p>
+
+									<p>F1</p>
+									<p>F2</p>
+									<p>F3</p>
+									<p>F4</p>
+
+									<p>G1</p>
+									<p>G2</p>
+									<p>G3</p>
+									<p>G4</p>
+								</div>
 							</div>
 						</div>
 						<div
@@ -303,16 +314,16 @@
 
 							<!-- * PRICING SECTION -->
 
-							<div class="bg-tertiary p-8 pb-4 rounded-xl ">
+							<div class="bg-tertiary p-8 pb-4 rounded-xl">
 								<div
 									class="flex justify-between *:font-medium text-base border-b-2 pb-4 border-dashed"
 								>
-									<p>
+									<p class="flex items-center">
 										Seat
-										<sup
-											class="bg-primary text-white text-xs px-2 rounded-md ml-1 font-bold hidden"
+										<span
+											class="bg-primary text-white text-xs px-2 rounded-md ml-1 font-bold"
 											id="seat-count"
-											>2</sup
+											>2</span
 										>
 									</p>
 									<p>Cash</p>
@@ -335,13 +346,13 @@
 
 									<div id="total-pricing" class="font-semibold pt-3 border-t-2">
 										<p>Total</p>
-										<p>BDT <span id="total-price">1100</span></p>
+										<p>BDT <span id="total-price">00.00</span></p>
 									</div>
 
-									<div class="text-base flex bg-white p-2 rounded-xl">
+									<div class="text-base flex bg-white !p-2 rounded-xl">
 										<input
 											type="text"
-											placeholder="Have any copupon?"
+											placeholder="Have any coupon?"
 											class="pl-6 flex-1 outline-none"
 										/>
 										<button
