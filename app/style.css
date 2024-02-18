@@ -1244,7 +1244,8 @@ img {
 }
 
 .section-heading {
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
   font-family: "Raleway", sans-serif;;
   font-size: 3rem;
   line-height: 1;
@@ -1253,17 +1254,31 @@ img {
 
 .coupon-container {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto auto auto;
   gap: 0.5rem;
   border-radius: 1.5rem;
 }
 
+.coupon-container > * {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .coupon-container_detail-1 {
-  font-family: "Inter", sans-serif;
   font-size: 3rem;
   line-height: 1;
   font-weight: 800;
   color: #030712CC;
+}
+
+.coupon-container_detail-2 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
 .absolute {
@@ -1286,9 +1301,37 @@ img {
   grid-row: span 2 / span 2;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-\[\] {
+  margin-top: ;
+  margin-bottom: ;
+}
+
+.my-\[1\] {
+  margin-top: 1;
+  margin-bottom: 1;
+}
+
+.my-\[10px_30px\] {
+  margin-top: 10px 30px;
+  margin-bottom: 10px 30px;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .mb-5 {
@@ -1303,8 +1346,12 @@ img {
   margin-top: 2.5rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .flex {
@@ -1326,6 +1373,10 @@ img {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
 }
 
 .translate-y-1\/2 {
@@ -1403,16 +1454,24 @@ img {
   padding-bottom: 9rem;
 }
 
+.pl-14 {
+  padding-left: 3.5rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
 
-.text-left {
-  text-align: left;
-}
-
 .text-center {
   text-align: center;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
 
 .font-rale {
@@ -1452,6 +1511,14 @@ img {
 
 .leading-snug {
   line-height: 1.375;
+}
+
+.text-\[\#03071266\] {
+  color: #03071266;
+}
+
+.text-\[\#03071280\] {
+  color: #03071280;
 }
 
 .text-neutral-content {
