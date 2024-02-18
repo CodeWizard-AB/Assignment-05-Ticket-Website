@@ -5,6 +5,8 @@ export const theme = {
 		colors: {
 			primary: "#1DD100",
 			secondary: "#1DD1001A",
+			tertiary: "#F7F8F8",
+			fontColor: "#030712",
 		},
 
 		fontFamily: {

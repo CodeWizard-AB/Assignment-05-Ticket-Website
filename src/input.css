@@ -34,11 +34,12 @@
 	.coupon-container_detail-2 {
 		@apply text-xl font-bold my-1;
 	}
-}
 
-@layer base {
-	img {
-		/* width: 100%; */
-		min-width: fit-content;
+	form label {
+		@apply font-bold text-base;
+	}
+
+	form input {
+		@apply border-2 p-5 outline-none placeholder:text-base placeholder:text-[#03071266] rounded-2xl mb-2;
 	}
 }

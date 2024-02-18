@@ -17,7 +17,7 @@
 		<!-- * CSS REFERENCE -->
 		<link rel="stylesheet" href="app/style.css" />
 	</head>
-	<body>
+	<body class="text-fontColor">
 		<!-- * HEADER COMPONENTS -->
 
 		<header class="main-container">
@@ -54,7 +54,7 @@
 								destination selection to booking, ensuring every step is
 								seamless and stress-free.
 							</p>
-							<a href="#">
+							<a href="#ticket-purchase">
 								<button
 									class="btn bg-primary border-none hover:bg-primary text-xl font-bold px-6"
 								>
@@ -190,7 +190,7 @@
 									<p>Dhaka - Sylhet</p>
 								</div>
 
-								<div class="border-y-2 py-6 border-dotted">
+								<div class="border-y-2 py-6 border-dashed">
 									<p>Departure Time</p>
 									<p>9:00 PM</p>
 								</div>
@@ -219,20 +219,20 @@
 						</figure>
 					</div>
 				</div>
-				<div class="main-container mt-7">
+				<div class="main-container mt-7" id="ticket-purchase">
 					<div
-						class="grid grid-cols-2 gap-4 bg-white rounded-3xl p-8 font-inter"
+						class="grid grid-cols-[52fr_48fr] gap-4 bg-white rounded-3xl p-8 font-inter"
 					>
-						<div class="space-y-6">
+						<div class="space-y-6 pr-6">
 							<h2 class="font-rale text-2xl font-semibold">Select Your Seat</h2>
 							<div
-								class="flex justify-between *:flex items-center *:items-center *:gap-2 border-y-2 border-dotted py-4"
+								class="flex justify-between *:flex items-center *:items-center *:gap-2 border-y-2 border-dashed py-4"
 							>
 								<figure>
 									<img
 										src="images/seat-gray.png"
 										alt="seat gray"
-										class="border-2 border-dotted p-1"
+										class="border-2 border-dashed p-1"
 									/>
 									<figcaption class="text-lg font-medium">Available</figcaption>
 								</figure>
@@ -240,7 +240,7 @@
 									<img
 										src="images/seat-green-filled.png"
 										alt="seat green"
-										class="border-2 border-dotted p-1"
+										class="border-2 border-dashed p-1"
 									/>
 									<figcaption class="text-primary font-medium text-lg">
 										Selected
@@ -248,32 +248,167 @@
 								</figure>
 							</div>
 							<div
-								class="grid grid-cols-[auto_1fr_1fr_1fr_1fr] place-items-center gap-y-6 gap-x-8"
+								class="grid grid-cols-[auto_1fr_1fr_1fr_1fr] gap-y-6 gap-x-8 *:rounded-xl *:bg-tertiary *:text-center *:py-4 *:border *:cursor-pointer seat-container"
 							>
 								<figure
-									class="bg-[#0307121A] py-5 px-12 grid place-items-center rounded-xl col-span-5 justify-self-end"
+									class="!bg-[#0307121A] py-5 px-10 grid place-items-center rounded-xl col-span-5 justify-self-end"
 								>
 									<img src="images/Vector.png" alt="car vector" />
 								</figure>
 								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
-								<p>A</p>
+								<p>A1</p>
+								<p>A2</p>
+								<p>A3</p>
+								<p>A4</p>
+								<p>B</p>
+								<p>B1</p>
+								<p>B2</p>
+								<p>B3</p>
+								<p>B4</p>
+								<p>C</p>
+								<p>C1</p>
+								<p>C2</p>
+								<p>C3</p>
+								<p>C4</p>
+								<p>D</p>
+								<p>D1</p>
+								<p>D2</p>
+								<p>D3</p>
+								<p>D4</p>
+								<p>E</p>
+								<p>E1</p>
+								<p>E2</p>
+								<p>E3</p>
+								<p>E4</p>
+								<p>F</p>
+								<p>F1</p>
+								<p>F2</p>
+								<p>F3</p>
+								<p>F4</p>
+								<p>G</p>
+								<p>G1</p>
+								<p>G2</p>
+								<p>G3</p>
+								<p>G4</p>
 							</div>
 						</div>
-						<div class="bg-red-300">
-							<h2 class="font-rale text-2xl font-semibold">Select Your Seat</h2>
+						<div
+							class="space-y-4 border-l-2 border-black border-dashed pl-8 font-inter"
+						>
+							<h2
+								class="font-rale text-2xl font-semibold border-b-2 pb-6 border-dashed"
+							>
+								Select Your Seat
+							</h2>
+
+							<!-- * PRICING SECTION -->
+
+							<div class="bg-tertiary p-8 pb-4 rounded-xl ">
+								<div
+									class="flex justify-between *:font-medium text-base border-b-2 pb-4 border-dashed"
+								>
+									<p>
+										Seat
+										<sup
+											class="bg-primary text-white text-xs px-2 rounded-md ml-1 font-bold hidden"
+											id="seat-count"
+											>2</sup
+										>
+									</p>
+									<p>Cash</p>
+									<p>Price</p>
+								</div>
+
+								<!-- * BOOKING PART -->
+
+								<div
+									id="booking"
+									class="*:flex *:items-center *:justify-between *:py-4"
+								>
+									<div>
+										<p>C2</p>
+										<p>Economoy</p>
+										<p>550</p>
+									</div>
+
+									<!-- * TOTAL PRICING PART -->
+
+									<div id="total-pricing" class="font-semibold pt-3 border-t-2">
+										<p>Total</p>
+										<p>BDT <span id="total-price">1100</span></p>
+									</div>
+
+									<div class="text-base flex bg-white p-2 rounded-xl">
+										<input
+											type="text"
+											placeholder="Have any copupon?"
+											class="pl-6 flex-1 outline-none"
+										/>
+										<button
+											class="btn hover:bg-primary bg-primary text-white px-6"
+											disabled
+										>
+											Apply
+										</button>
+									</div>
+
+									<!-- * TOTAL GRAND -->
+
+									<div id="total-grand" class="font-semibold">
+										<p>Grand Total</p>
+										<p>BDT <span id="grand-price">900</span></p>
+									</div>
+								</div>
+							</div>
+
+							<!-- * PRICING FORM SECTION -->
+
+							<form action="#" class="flex flex-col gap-4">
+								<label for="name"> Passenger Name <sup>* </sup></label>
+								<input
+									type="text"
+									placeholder="Enter your name"
+									name="fullName"
+									id="name"
+									required
+								/>
+								<label for="phone"> Phone Number<sup>*</sup> </label>
+								<input
+									type="tel"
+									name="phone"
+									id="phone"
+									required
+									placeholder="Enter your phone number"
+								/>
+								<label for="email">Email ID</label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="Enter your email id"
+								/>
+								<button
+									class="btn bg-primary hover:bg-primary text-white text-xl h-16"
+									disabled
+								>
+									Next
+								</button>
+							</form>
+							<div
+								class="flex justify-around pt-3 *:border-b *:border-[#03071299] *:text-[#03071299]"
+							>
+								<p>Terms and Conditions</p>
+								<p>Cancellation Policy</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 		</main>
+
+		<!-- * FOOTER COMPONENTS -->
+
+		<footer class="bg-"></footer>
 
 		<!-- * JS REFERENCE -->
 		<script src="JS/script.js"></script>
