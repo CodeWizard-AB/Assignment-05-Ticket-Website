@@ -334,22 +334,27 @@
 
 								<div
 									id="booking"
-									class="*:flex *:items-center *:justify-between *:py-4"
+									class="*:flex *:items-center *:justify-between"
 								>
-									<!-- <div class="!py-3">
-										<p>C2</p>
-										<p>Economoy</p>
-										<p>550</p>
-									</div> -->
-
 									<!-- * TOTAL PRICING PART -->
 
-									<div id="total-pricing" class="font-semibold pt-3 border-t-2">
+									<div id="total-pricing" class="font-semibold pt-3">
 										<p>Total</p>
 										<p>BDT <span id="total-price">00.00</span></p>
 									</div>
 
-									<div class="text-base flex bg-white !p-2 rounded-xl">
+									<div
+										class="font-semibold my-3 !hidden"
+										id="discount-container"
+									>
+										<p>Discounted Price</p>
+										<p>BDT <span id="discount-price">00.00</span></p>
+									</div>
+
+									<div
+										class="text-base flex bg-white !p-2 rounded-xl my-4"
+										id="discount-input"
+									>
 										<input
 											type="text"
 											placeholder="Have any coupon?"
@@ -358,8 +363,8 @@
 										/>
 										<button
 											class="btn hover:bg-primary bg-primary text-white px-6"
-											disabled
 											id="discount-btn"
+											disabled
 										>
 											Apply
 										</button>
@@ -426,9 +431,11 @@
 
 		<!-- * modal window -->
 
-		<div class="absolute top-0 bottom-0 w-full bg-tertiary z-10 modal"></div>
 		<div
-			class="z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 modal"
+			class="absolute top-0 bottom-0 w-full bg-tertiary z-10 modalWindow hidden"
+		></div>
+		<div
+			class="z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 modalWindow hidden"
 		>
 			<div
 				class="bg-white py-14 px-16 text-center rounded-2xl shadow-lg font-roboto"
@@ -458,6 +465,6 @@
 		</div>
 
 		<!-- * JS REFERENCE -->
-		<script src="JS/script.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>
