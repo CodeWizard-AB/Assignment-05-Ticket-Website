@@ -53,6 +53,10 @@ const initWeb = function () {
 	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
 		.toFixed(2)
 		.padStart(5, 0);
+	document
+		.querySelectorAll("#booking .seat")
+		.forEach((element) => element.remove());
+	totalPriceEl.closest("div").classList.remove("border-t-2");
 };
 
 initWeb();
@@ -83,12 +87,12 @@ const btnActivate = function (value1, value2) {
 seatContainer.addEventListener("click", function (e) {
 	const clicked = e.target;
 	const seatHtml = `
-	<div class='my-3'>
+	<div class='my-3 seat'>
 		<p>${clicked.textContent}</p>
 		<p>Economoy</p>
 		<p>550</p>
-	</div>
-	`;
+		</div>
+		`;
 
 	if (
 		!clicked.classList.contains(greenColor) &&
@@ -120,7 +124,6 @@ discountBtn.addEventListener("click", function () {
 	calcPrice(seatCount, couponInput.value);
 });
 
-nextBtn.removeAttribute("disabled");
 nextBtn.addEventListener("click", function (e) {
 	e.preventDefault();
 	modal.forEach((element) => element.classList.remove("hidden"));
