@@ -1859,6 +1859,11 @@ form input::placeholder {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.\!bg-primary {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(29 209 0 / var(--tw-bg-opacity)) !important;
+}
+
 .bg-hero-banner {
   background-image: linear-gradient(180.00deg, rgba(3, 7, 18, 0.5),rgba(3, 7, 18, 0) 100%), url(../images/banner.png);;
 }
@@ -1877,6 +1882,18 @@ form input::placeholder {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.\!p-0 {
+  padding: 0px !important;
+}
+
+.\!p-3 {
+  padding: 0.75rem !important;
 }
 
 .px-10 {
@@ -1912,6 +1929,11 @@ form input::placeholder {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.\!py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
 }
 
 .pb-32 {
@@ -2115,6 +2137,11 @@ form input::placeholder {
 .\*\:py-4 > * {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.\*\:py-3 > * {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .\*\:text-center > * {
