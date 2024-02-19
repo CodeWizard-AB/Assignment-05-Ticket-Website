@@ -12,6 +12,7 @@ export const theme = {
 		fontFamily: {
 			inter: ['"Inter", sans-serif'],
 			rale: ['"Raleway", sans-serif;'],
+			roboto: ['"Roboto", sans-serif'],
 		},
 
 		backgroundImage: {

@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -354,6 +354,7 @@
 											type="text"
 											placeholder="Have any coupon?"
 											class="pl-6 flex-1 outline-none"
+											id="coupon-input"
 										/>
 										<button
 											class="btn hover:bg-primary bg-primary text-white px-6"
@@ -402,6 +403,7 @@
 								<button
 									class="btn bg-primary hover:bg-primary text-white text-xl h-16"
 									disabled
+									id="next-btn"
 								>
 									Next
 								</button>
@@ -421,6 +423,39 @@
 		<!-- * FOOTER COMPONENTS -->
 
 		<footer class="bg-"></footer>
+
+		<!-- * modal window -->
+
+		<div class="absolute top-0 bottom-0 w-full bg-tertiary z-10 modal"></div>
+		<div
+			class="z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 modal"
+		>
+			<div
+				class="bg-white py-14 px-16 text-center rounded-2xl shadow-lg font-roboto"
+			>
+				<figure>
+					<img src="images/success.png" alt="successfull logo" class="m-auto" />
+				</figure>
+				<p
+					class="text-[#27AE60] text-2xl font-bold my-8 border-2 border-dashed"
+				>
+					SUCCESS
+				</p>
+				<p class="text-xl font-medium px-8">
+					Thank you for Booking Our Bus Seats. <br />
+					We are working hard to find the best service and deals for you.
+				</p>
+				<p class="font-light text-xl my-4">
+					Shortly you will find a confirmation in your email.
+				</p>
+
+				<button
+					class="btn rounded-full bg-[#27AE60] text-white hover:bg-[#27AE60] text-xl px-32"
+				>
+					Continue
+				</button>
+			</div>
+		</div>
 
 		<!-- * JS REFERENCE -->
 		<script src="JS/script.js"></script>

@@ -2,26 +2,41 @@
 
 // * SELECTED ELEMENTS -
 
-const seatContainer = document.querySelector("#seats");
 const bookContainer = document.getElementById("booking");
 const totalPriceEl = document.getElementById("total-price");
 const grandPriceEl = document.getElementById("grand-price");
-const discountBtn = document.getElementById("discount-btn");
 const seatCounting = document.getElementById("seat-count");
 const totalSeats = document.getElementById("total-seats");
+const seatContainer = document.getElementById("seats");
 const discountCoupons = [...document.querySelectorAll(".coupon")].map(
 	(elment) => elment.textContent
 );
 
+// * INPUTS -
+
+const couponInput = document.getElementById("coupon-input");
+const passengerNameInput = document.getElementById("name");
+const phoneNumberInput = document.getElementById("phone");
+
+// * BUTTONS -
+
+const discountBtn = document.getElementById("discount-btn");
+const nextBtn = document.getElementById("next-btn");
+
 let totalSeat = 40;
 let seatCount = 0;
+let totalPrice, discountPrice, grandPrice;
 
-// * FUNCTION
+// * FUNCTIONS -
 
-const calcPrice = function (seats) {
-	const totalPrice = seats * 550;
-	const discountPrice = 0;
-	const grandPrice = totalPrice - discountPrice;
+const calcPrice = function (seats, coupon) {
+	totalPrice = (seats * 550).toFixed(2);
+	if (coupon && discountCoupons.includes(coupon)) {
+		discountPrice = coupon === discountCoupons[0] ? 0.15 : 0.2 * totalPrice;
+	} else {
+		discountPrice = 0;
+	}
+	grandPrice = (totalPrice - discountPrice).toFixed(2);
 	totalPriceEl.textContent = totalPrice;
 	grandPriceEl.textContent = grandPrice;
 	totalSeats.textContent = totalSeat;
@@ -54,4 +69,10 @@ seatContainer.addEventListener("click", function (e) {
 	}
 });
 
+// * BUTTONS EVENTS -
 
+discountBtn.addEventListener("click", function (e) {
+	console.log(e);
+});
+
+nextBtn.addEventListener("click", function () {});
