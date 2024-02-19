@@ -41,28 +41,27 @@ let totalPrice,
 
 const initWeb = function () {
 	[totalPrice, discountPrice, grandPrice] = [0, 0, 0];
-	[totalSeat, seatCount] = [40, 0];
+	[totalSeat, seatCount] = [28, 0];
 	greenColor = "!bg-primary";
 	hidden = "!hidden";
+
+	seatCounting.textContent = seatCount;
+	totalSeats.textContent = totalSeat;
+	discountContainer.classList.add(hidden);
+	discountInput.classList.remove(hidden);
+	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
+		.toFixed(2)
+		.padStart(5, 0);
+	nextBtn.setAttribute("disabled", true);
+	totalPriceEl.closest("div").classList.remove("border-t-2");
 
 	document
 		.querySelectorAll("#seats p")
 		.forEach((element) => element.classList.remove(greenColor));
-	discountContainer.classList.add(hidden);
-	discountInput.classList.remove(hidden);
-	couponInput.value = "";
-	passengerNameInput.value = phoneNumberInput.value = "";
-	seatCounting.textContent = seatCount;
-	totalSeats.textContent = totalSeat;
-
-	nextBtn.setAttribute("disabled", true);
-	totalPriceEl.closest("div").classList.remove("border-t-2");
-	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
-		.toFixed(2)
-		.padStart(5, 0);
 	document
 		.querySelectorAll("#booking .seat")
 		.forEach((element) => element.remove());
+	document.querySelectorAll("input").forEach((input) => (input.value = ""));
 };
 
 const calcPrice = function (seats, coupon) {
@@ -100,17 +99,19 @@ seatContainer.addEventListener("click", function (e) {
 		</div>
 		`;
 
-	if (
-		!clicked.classList.contains(greenColor) &&
-		seatCount < 4 &&
-		clicked.tagName === "P"
-	) {
-		clicked.classList.add(greenColor);
-		bookContainer.insertAdjacentHTML("afterbegin", seatHtml);
-		seatCount++;
-		totalSeat--;
-		calcPrice(seatCount);
-		totalPriceEl.closest("div").classList.add("border-t-2");
+	if (clicked.tagName === "P") {
+		if (!clicked.classList.contains(greenColor) && seatCount < 4) {
+			clicked.classList.add(greenColor);
+			bookContainer.insertAdjacentHTML("afterbegin", seatHtml);
+			seatCount++;
+			totalSeat--;
+			calcPrice(seatCount);
+			totalPriceEl.closest("div").classList.add("border-t-2");
+		} else if (clicked.classList.contains(greenColor)) {
+			alert("Seat is already booked!");
+		} else {
+			alert("You can book upto 4 seats!");
+		}
 	}
 });
 
