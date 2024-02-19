@@ -53,7 +53,6 @@ const initWeb = function () {
 	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
 		.toFixed(2)
 		.padStart(5, 0);
-	nextBtn.setAttribute("disabled", true);
 	totalPriceEl.closest("div").classList.remove("border-t-2");
 
 	document
@@ -62,6 +61,9 @@ const initWeb = function () {
 	document
 		.querySelectorAll("#booking .seat")
 		.forEach((element) => element.remove());
+	document
+		.querySelectorAll(".button")
+		.forEach((button) => button.setAttribute("disabled", true));
 	document.querySelectorAll("input").forEach((input) => (input.value = ""));
 };
 
