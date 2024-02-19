@@ -44,19 +44,25 @@ const initWeb = function () {
 	[totalSeat, seatCount] = [40, 0];
 	greenColor = "!bg-primary";
 	hidden = "!hidden";
+
 	document
 		.querySelectorAll("#seats p")
 		.forEach((element) => element.classList.remove(greenColor));
 	discountContainer.classList.add(hidden);
 	discountInput.classList.remove(hidden);
 	couponInput.value = "";
+	passengerNameInput.value = phoneNumberInput.value = "";
+	seatCounting.textContent = seatCount;
+	totalSeats.textContent = totalSeat;
+
+	nextBtn.setAttribute("disabled", true);
+	totalPriceEl.closest("div").classList.remove("border-t-2");
 	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
 		.toFixed(2)
 		.padStart(5, 0);
 	document
 		.querySelectorAll("#booking .seat")
 		.forEach((element) => element.remove());
-	totalPriceEl.closest("div").classList.remove("border-t-2");
 };
 
 initWeb();
@@ -111,21 +117,16 @@ seatContainer.addEventListener("click", function (e) {
 // * BUTTONS EVENTS -
 
 couponInput.addEventListener("input", function () {
-	if (discountCoupons.includes(this.value) && seatCount > 0) {
-		discountBtn.removeAttribute("disabled");
-	} else {
-		discountBtn.setAttribute("disabled", true);
-	}
+	discountCoupons.includes(this.value) && seatCount > 0
+		? discountBtn.removeAttribute("disabled")
+		: discountBtn.setAttribute("disabled", true);
 });
 
 document.querySelector("form").addEventListener("input", function (e) {
 	const formEl = [passengerNameInput, phoneNumberInput];
-	if (formEl.every((element) => element.value)) {
-		console.log("yes");
-		nextBtn.removeAttribute("disabled");
-	} else {
-		nextBtn.setAttribute("disabled", true);
-	}
+	formEl.every((element) => element.value) && seatCount > 0
+		? nextBtn.removeAttribute("disabled")
+		: nextBtn.setAttribute("disabled", true);
 });
 
 discountBtn.addEventListener("click", function () {
