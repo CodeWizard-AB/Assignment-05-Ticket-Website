@@ -1561,10 +1561,6 @@ form input::placeholder {
   grid-column: span 2 / span 2;
 }
 
-.col-span-5 {
-  grid-column: span 5 / span 5;
-}
-
 .row-span-2 {
   grid-row: span 2 / span 2;
 }
@@ -1623,10 +1619,6 @@ form input::placeholder {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -1638,16 +1630,6 @@ form input::placeholder {
 .h-max {
   height: -moz-max-content;
   height: max-content;
-}
-
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.h-min {
-  height: -moz-min-content;
-  height: min-content;
 }
 
 .max-w-screen-md {
@@ -1675,12 +1657,16 @@ form input::placeholder {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .grid-cols-\[52fr_48fr\] {
   grid-template-columns: 52fr 48fr;
 }
 
-.grid-cols-\[auto_1fr_1fr_1fr_1fr\] {
-  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+.grid-cols-\[auto_1fr\] {
+  grid-template-columns: auto 1fr;
 }
 
 .grid-cols-\[auto_auto\] {
@@ -1689,22 +1675,6 @@ form input::placeholder {
 
 .grid-cols-\[auto_auto_auto\] {
   grid-template-columns: auto auto auto;
-}
-
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-cols-\[auto\] {
-  grid-template-columns: auto;
-}
-
-.grid-cols-\[auto_1fr\] {
-  grid-template-columns: auto 1fr;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1719,28 +1689,12 @@ form input::placeholder {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
 }
 
 .justify-around {
   justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
-.justify-stretch {
-  justify-content: stretch;
 }
 
 .gap-14 {
@@ -1771,10 +1725,6 @@ form input::placeholder {
 
 .gap-y-6 {
   row-gap: 1.5rem;
-}
-
-.gap-y-4 {
-  row-gap: 1rem;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1909,21 +1859,16 @@ form input::placeholder {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.\!bg-primary {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(29 209 0 / var(--tw-bg-opacity)) !important;
-}
-
 .bg-hero-banner {
   background-image: linear-gradient(180.00deg, rgba(3, 7, 18, 0.5),rgba(3, 7, 18, 0) 100%), url(../images/banner.png);;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.\!p-2 {
+  padding: 0.5rem !important;
 }
 
-.p-2 {
-  padding: 0.5rem;
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-4 {
@@ -1932,18 +1877,6 @@ form input::placeholder {
 
 .p-8 {
   padding: 2rem;
-}
-
-.\!p-1 {
-  padding: 0.25rem !important;
-}
-
-.\!p-0 {
-  padding: 0px !important;
-}
-
-.\!p-2 {
-  padding: 0.5rem !important;
 }
 
 .px-10 {
@@ -1979,11 +1912,6 @@ form input::placeholder {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
 }
 
 .pb-32 {
