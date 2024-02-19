@@ -64,8 +64,9 @@ const initWeb = function () {
 	document.querySelectorAll("input").forEach((input) => (input.value = ""));
 };
 
-const calcPrice = function (seats, coupon) {
+const calcPrice = function (seats) {
 	totalPrice = (seats * 550).toFixed(2);
+	const coupon = couponInput.value;
 	discountPrice = coupon
 		? (coupon === discountCoupons[0] ? 0.15 : 0.2) * totalPrice
 		: 0;
@@ -75,14 +76,6 @@ const calcPrice = function (seats, coupon) {
 	grandPriceEl.textContent = grandPrice;
 	totalSeats.textContent = totalSeat;
 	seatCounting.textContent = seats;
-};
-
-const btnActivate = function (value1, value2) {
-	if (value1 && value2 && seatCount > 0) {
-		nextBtn.removeAttribute("disabled");
-	} else {
-		nextBtn.setAttribute("disabled", true);
-	}
 };
 
 initWeb();
@@ -137,7 +130,7 @@ document.querySelector("form").addEventListener("input", function (e) {
 discountBtn.addEventListener("click", function () {
 	discountContainer.classList.remove(hidden);
 	discountInput.classList.add(hidden);
-	calcPrice(seatCount, couponInput.value);
+	calcPrice(seatCount);
 });
 
 nextBtn.addEventListener("click", function (e) {
