@@ -107,6 +107,10 @@ seatContainer.addEventListener("click", function (e) {
 			totalSeat--;
 			calcPrice(seatCount);
 			totalPriceEl.closest("div").classList.add("border-t-2");
+
+			if (passengerNameInput.value && phoneNumberInput.value) {
+				nextBtn.removeAttribute("disabled");
+			}
 		} else if (clicked.classList.contains(greenColor)) {
 			alert("Seat is already booked!");
 		} else {
