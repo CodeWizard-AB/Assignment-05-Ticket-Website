@@ -35,7 +35,8 @@ let totalPrice,
 	totalSeat,
 	seatCount,
 	greenColor,
-	hidden;
+	hidden,
+	coupon;
 
 // * FUNCTIONS -
 
@@ -66,7 +67,7 @@ const initWeb = function () {
 
 const calcPrice = function (seats) {
 	totalPrice = (seats * 550).toFixed(2);
-	const coupon = couponInput.value;
+	coupon = couponInput.value;
 	discountPrice = coupon
 		? (coupon === discountCoupons[0] ? 0.15 : 0.2) * totalPrice
 		: 0;
@@ -103,6 +104,10 @@ seatContainer.addEventListener("click", function (e) {
 
 			if (passengerNameInput.value && phoneNumberInput.value) {
 				nextBtn.removeAttribute("disabled");
+			}
+
+			if (discountCoupons.includes(coupon)) {
+				discountBtn.removeAttribute("disabled");
 			}
 		} else if (clicked.classList.contains(greenColor)) {
 			alert("Seat is already booked!");
