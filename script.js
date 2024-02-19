@@ -65,8 +65,6 @@ const initWeb = function () {
 		.forEach((element) => element.remove());
 };
 
-initWeb();
-
 const calcPrice = function (seats, coupon) {
 	totalPrice = (seats * 550).toFixed(2);
 	discountPrice = coupon
@@ -87,6 +85,8 @@ const btnActivate = function (value1, value2) {
 		nextBtn.setAttribute("disabled", true);
 	}
 };
+
+initWeb();
 
 // * EVENT HANDLERS -
 
