@@ -118,6 +118,16 @@ couponInput.addEventListener("input", function () {
 	}
 });
 
+document.querySelector("form").addEventListener("input", function (e) {
+	const formEl = [passengerNameInput, phoneNumberInput];
+	if (formEl.every((element) => element.value)) {
+		console.log("yes");
+		nextBtn.removeAttribute("disabled");
+	} else {
+		nextBtn.setAttribute("disabled", true);
+	}
+});
+
 discountBtn.addEventListener("click", function () {
 	discountContainer.classList.remove(hidden);
 	discountInput.classList.add(hidden);
