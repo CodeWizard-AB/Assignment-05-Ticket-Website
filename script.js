@@ -11,37 +11,63 @@ const seatContainer = document.getElementById("seats");
 const discountContainer = document.getElementById("discount-container");
 const discountInput = document.getElementById("discount-input");
 const discountPriceContent = document.getElementById("discount-price");
+const mainComponents = document.querySelectorAll(".container");
+const modal = document.querySelectorAll(".modalWindow");
 const discountCoupons = [...document.querySelectorAll(".coupon")].map(
 	(elment) => elment.textContent
 );
 
-// * INPUTS -
+// * INPUT ELEMENTS -
 
 const couponInput = document.getElementById("coupon-input");
 const passengerNameInput = document.getElementById("name");
 const phoneNumberInput = document.getElementById("phone");
 
-// * BUTTONS -
+// * BUTTONS ELEMENTS -
 
 const discountBtn = document.getElementById("discount-btn");
 const nextBtn = document.getElementById("next-btn");
+const modalBtn = document.getElementById("modal-btn");
 
-let [totalSeat, seatCount] = [40, 0];
-let totalPrice, discountPrice, grandPrice;
+let totalPrice,
+	discountPrice,
+	grandPrice,
+	totalSeat,
+	seatCount,
+	greenColor,
+	hidden;
 
 // * FUNCTIONS -
+
+const initWeb = function () {
+	[totalPrice, discountPrice, grandPrice] = [0, 0, 0];
+	[totalSeat, seatCount] = [40, 0];
+	greenColor = "!bg-primary";
+	hidden = "!hidden";
+	document
+		.querySelectorAll("#seats p")
+		.forEach((element) => element.classList.remove(greenColor));
+	discountContainer.classList.add(hidden);
+	discountInput.classList.remove(hidden);
+	couponInput.value = "";
+	totalPriceEl.textContent = grandPriceEl.textContent = totalPrice
+		.toFixed(2)
+		.padStart(5, 0);
+};
+
+initWeb();
 
 const calcPrice = function (seats, coupon) {
 	totalPrice = (seats * 550).toFixed(2);
 	discountPrice = coupon
 		? (coupon === discountCoupons[0] ? 0.15 : 0.2) * totalPrice
 		: 0;
+	discountPriceContent.textContent = discountPrice.toFixed(2);
 	grandPrice = (totalPrice - discountPrice).toFixed(2);
 	totalPriceEl.textContent = totalPrice;
 	grandPriceEl.textContent = grandPrice;
 	totalSeats.textContent = totalSeat;
 	seatCounting.textContent = seats;
-	discountPriceContent.textContent = discountPrice.toFixed(2);
 };
 
 const btnActivate = function (value1, value2) {
@@ -56,7 +82,6 @@ const btnActivate = function (value1, value2) {
 
 seatContainer.addEventListener("click", function (e) {
 	const clicked = e.target;
-	const greenColor = "!bg-primary";
 	const seatHtml = `
 	<div class='my-3'>
 		<p>${clicked.textContent}</p>
@@ -90,11 +115,20 @@ couponInput.addEventListener("input", function () {
 });
 
 discountBtn.addEventListener("click", function () {
-	discountContainer.classList.remove("!hidden");
-	discountInput.classList.add("!hidden");
+	discountContainer.classList.remove(hidden);
+	discountInput.classList.add(hidden);
 	calcPrice(seatCount, couponInput.value);
 });
 
+nextBtn.removeAttribute("disabled");
 nextBtn.addEventListener("click", function (e) {
 	e.preventDefault();
+	modal.forEach((element) => element.classList.remove("hidden"));
+	mainComponents.forEach((element) => element.classList.add("hidden"));
+});
+
+modalBtn.addEventListener("click", function () {
+	initWeb();
+	modal.forEach((element) => element.classList.add("hidden"));
+	mainComponents.forEach((element) => element.classList.remove("hidden"));
 });

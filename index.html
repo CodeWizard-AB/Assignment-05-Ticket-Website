@@ -20,7 +20,7 @@
 	<body class="text-fontColor">
 		<!-- * HEADER COMPONENTS -->
 
-		<header class="main-container">
+		<header class="main-container container">
 			<!-- * NAVIGATION SECTION -->
 
 			<nav class="flex justify-between items-center mt-10 mb-8 font-rale">
@@ -95,7 +95,7 @@
 
 		<!-- * MAIN COMPONENTS -->
 
-		<main class="*:my-32">
+		<main class="*:my-32 container">
 			<!-- * OFFER / COUPON SECTION -->
 
 			<section class="text-center main-container">
@@ -336,7 +336,9 @@
 									id="booking"
 									class="*:flex *:items-center *:justify-between"
 								>
-									<!-- * TOTAL PRICING PART -->
+									<!-- * BOOKED SEATS -->
+
+									<!-- * TOTAL TICKETS PRICE -->
 
 									<div id="total-pricing" class="font-semibold pt-3">
 										<p>Total</p>
@@ -370,7 +372,7 @@
 										</button>
 									</div>
 
-									<!-- * TOTAL GRAND -->
+									<!-- * TOTAL GRAND PRICE -->
 
 									<div id="total-grand" class="font-semibold">
 										<p>Grand Total</p>
@@ -379,7 +381,7 @@
 								</div>
 							</div>
 
-							<!-- * PRICING FORM SECTION -->
+							<!-- * PRICING FORM VALIDATION -->
 
 							<form action="#" class="flex flex-col gap-4">
 								<label for="name"> Passenger Name <sup>* </sup></label>
@@ -427,9 +429,9 @@
 
 		<!-- * FOOTER COMPONENTS -->
 
-		<footer class="bg-"></footer>
+		<footer class="container"></footer>
 
-		<!-- * modal window -->
+		<!-- * MODAL WINDOW -->
 
 		<div
 			class="absolute top-0 bottom-0 w-full bg-tertiary z-10 modalWindow hidden"
@@ -457,6 +459,7 @@
 				</p>
 
 				<button
+					id="modal-btn"
 					class="btn rounded-full bg-[#27AE60] text-white hover:bg-[#27AE60] text-xl px-32"
 				>
 					Continue
