@@ -86,6 +86,8 @@ initWeb();
 
 // * EVENT HANDLERS -
 
+// * SEAT CLICKED EVENT - 
+
 seatContainer.addEventListener("click", function (e) {
 	const clicked = e.target;
 	const seatHtml = `
@@ -128,7 +130,7 @@ seatContainer.addEventListener("click", function (e) {
 	}
 });
 
-// * BUTTONS EVENTS -
+// * BUTTONS CLICKED EVENTS -
 
 couponInput.addEventListener("input", function () {
 	discountCoupons.includes(this.value) && seatCount > 0
