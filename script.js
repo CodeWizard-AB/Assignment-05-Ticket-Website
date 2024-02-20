@@ -86,7 +86,7 @@ initWeb();
 
 // * EVENT HANDLERS -
 
-// * SEAT CLICKED EVENT - 
+// * SEAT CLICKED EVENT -
 
 seatContainer.addEventListener("click", function (e) {
 	const clicked = e.target;
@@ -121,8 +121,7 @@ seatContainer.addEventListener("click", function (e) {
 			clicked.classList.remove(greenColor);
 			seatCount--;
 			totalSeat++;
-			if (seatCount === 0)
-				totalPriceEl.closest("div").classList.remove("border-t-2");
+			if (seatCount === 0) initWeb();
 		} else {
 			alert("You can book upto 4 seats!");
 		}
