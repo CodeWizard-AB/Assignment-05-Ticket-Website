@@ -3,6 +3,7 @@
 // * SELECTED ELEMENTS -
 
 const bookContainer = document.getElementById("booking");
+const bookedSeat = document.querySelectorAll(".seat");
 const totalPriceEl = document.getElementById("total-price");
 const grandPriceEl = document.getElementById("grand-price");
 const seatCounting = document.getElementById("seat-count");
@@ -101,7 +102,6 @@ seatContainer.addEventListener("click", function (e) {
 			bookContainer.insertAdjacentHTML("afterbegin", seatHtml);
 			seatCount++;
 			totalSeat--;
-			calcPrice(seatCount);
 			totalPriceEl.closest("div").classList.add("border-t-2");
 
 			if (passengerNameInput.value && phoneNumberInput.value) {
@@ -112,10 +112,17 @@ seatContainer.addEventListener("click", function (e) {
 				discountBtn.removeAttribute("disabled");
 			}
 		} else if (clicked.classList.contains(greenColor)) {
-			alert("Seat is already booked!");
+			document.querySelectorAll(".seat").forEach((seat) => {
+				if (seat.firstElementChild.textContent === clicked.textContent)
+					seat.remove();
+			});
+			clicked.classList.remove(greenColor);
+			seatCount--;
+			totalSeat++;
 		} else {
 			alert("You can book upto 4 seats!");
 		}
+		calcPrice(seatCount);
 	}
 });
 
