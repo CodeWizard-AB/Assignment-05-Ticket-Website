@@ -14,6 +14,7 @@ const discountInput = document.getElementById("discount-input");
 const discountPriceContent = document.getElementById("discount-price");
 const mainComponents = document.querySelectorAll(".component");
 const modal = document.querySelectorAll(".modalWindow");
+const ticketPrice = document.getElementById("seat-price");
 const discountCoupons = [...document.querySelectorAll(".coupon")].map(
 	(elment) => elment.textContent
 );
@@ -69,7 +70,7 @@ const initWeb = function () {
 };
 
 const calcPrice = function (seats) {
-	totalPrice = (seats * 550).toFixed(2);
+	totalPrice = (seats * parseInt(ticketPrice.innerText)).toFixed(2);
 	coupon = couponInput.value;
 	discountPrice = coupon
 		? (coupon === discountCoupons[0] ? 0.15 : 0.2) * totalPrice
