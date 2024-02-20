@@ -98,10 +98,10 @@ seatContainer.addEventListener("click", function (e) {
 
 	if (clicked.tagName === "P") {
 		if (!clicked.classList.contains(greenColor) && seatCount < 4) {
-			clicked.classList.add(greenColor);
-			bookContainer.insertAdjacentHTML("afterbegin", seatHtml);
 			seatCount++;
 			totalSeat--;
+			bookContainer.insertAdjacentHTML("afterbegin", seatHtml);
+			clicked.classList.add(greenColor);
 			totalPriceEl.closest("div").classList.add("border-t-2");
 
 			if (passengerNameInput.value && phoneNumberInput.value) {
@@ -119,6 +119,8 @@ seatContainer.addEventListener("click", function (e) {
 			clicked.classList.remove(greenColor);
 			seatCount--;
 			totalSeat++;
+			if (seatCount === 0)
+				totalPriceEl.closest("div").classList.remove("border-t-2");
 		} else {
 			alert("You can book upto 4 seats!");
 		}
